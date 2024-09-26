@@ -1,0 +1,25 @@
+config:
+  target: "https://start.insio.cz/en?skipRecaptcha=skip-recaptcha-secret-token"
+  phases:
+    - duration: 1500
+      arrivalRate: 5 # One user arrives every second
+      maxVusers: 5 # max active vusers
+
+  engines:
+    playwright: {}
+
+  processor: "./processor.js"
+
+  payload:
+    path: 'users.csv'
+    fields:
+      - companyName
+      - companyEmail
+      - password
+    order: sequence    # Use rows in sequence, one by one
+    unique: true       # Each virtual user (VU) will get a unique row, ensuring it's used once
+
+scenarios:
+  - name: 'register users'
+    engine: playwright
+    flowFunction: "registerUser"
