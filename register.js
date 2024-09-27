@@ -12,15 +12,15 @@ async function registerUser(companyName, companyEmail, password) {
   //   try {
 
   await page.goto(
-    "https://start.insio.cz/en?skipRecaptcha=skip-recaptcha-secret-token"
+    "https://start.insio.cz/cs?skipRecaptcha=skip-recaptcha-secret-token"
   );
 
   await page.fill('input[name="companyName"]', companyName);
-  await page.waitForTimeout(200);
+  // await page.waitForTimeout(200);
   await page.fill('input[name="email"]', companyEmail);
-  await page.waitForTimeout(200);
+  // await page.waitForTimeout(200);
   await page.fill('input[name="password"]', password);
-  await page.waitForTimeout(200);
+  // await page.waitForTimeout(200);
 
   await page.click('button[role="checkbox"]');
   await page.waitForTimeout(200);

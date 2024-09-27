@@ -1,5 +1,5 @@
 config:
-  target: "https://start.insio.cz/en?skipRecaptcha=skip-recaptcha-secret-token"
+  target: "https://start.insio.cz/cs?skipRecaptcha=skip-recaptcha-secret-token"
   phases:
     - duration: 1500
       arrivalRate: 5 # One user arrives every second
